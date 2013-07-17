@@ -2,6 +2,12 @@
 # Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
 # for headless setup. 
 
+# Installing node.js
+sudo apt-get install -y python-software-properties python g++ make
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install -y nodejs
+
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
 sudo apt-get install -y git-core
@@ -45,3 +51,6 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
+# Installing basic vimrc from amix
+git clone git://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_basic_vimrc.sh
